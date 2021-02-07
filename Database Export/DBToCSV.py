@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import filedialog, messagebox
 
-# used for multenterbox
 from easygui import *
 
 import sqlite3
@@ -164,7 +163,7 @@ class Sqlite():
 
 	def exportCSV(self, results, messagebox):
 		df = pd.DataFrame(results)
-		export_file_path = filesavebox()
+		export_file_path = filesavebox() # requires easygui
 
 		if export_file_path == '':
 			print('\nAction cancelled.\n')
