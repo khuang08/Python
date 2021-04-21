@@ -6,7 +6,7 @@ from tkinter import messagebox
 if __name__ == "__main__":
 
 	count = 0
-	os.chdir("C:\\youtube-dl")
+	os.chdir("D:\\youtube-dl")
 
 	root = tk.Tk()
 	root.withdraw()
