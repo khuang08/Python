@@ -5,12 +5,13 @@ from tkinter import messagebox
 
 from datetime import date
 import qrcode
+from PIL import Image
 
 if __name__ == "__main__":
 
 	count = 0
 
-	path = "C:\\QRCode"
+	path = "C:\\QRCode\\"
 	os.chdir(path)
 
 	# checks if folder exists
@@ -45,7 +46,6 @@ if __name__ == "__main__":
 			date = today.strftime("%m_%d_%y")
 			filename = f"qrcode_{date}.png"
 			img.save(filename)
-			count += 1
 		except:
 			tk.messagebox.showinfo("QR Code Generator", f"Invalid URL: {url}.\n")
 
@@ -54,7 +54,10 @@ if __name__ == "__main__":
 	else:
 		plural = ''
 
-	tk.messagebox.showinfo("QR Code Gnenerator", f"{count} image{plural} saved to {path}. Exiting.\n")
+	im = Image.open(filename) 
+	im.show()
+
+	tk.messagebox.showinfo("QR Code Gnenerator", f"QR code saved to {path}{filename}.\n")
 
 	root.destroy()
 
